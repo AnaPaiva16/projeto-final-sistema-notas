@@ -1,0 +1,5 @@
+Data do relatorio: Wed Jun 03 08:54:55 2026
+=== LISTA DE ALUNOS EM RECUPERAÇÃO ===
+FOCO PEDAGÓGICO: Alunos que precisam de monitoria interna.
+
+Parabéns! Nenhum aluno em situação de recuperação técnica. 🎉

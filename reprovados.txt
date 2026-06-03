@@ -1,0 +1,4 @@
+Data do relatorio: Wed Jun 03 08:54:49 2026
+=== LISTA DE ALUNOS REPROVADOS ===
+
+Nenhum aluno reprovado nesta listagem! 🎉

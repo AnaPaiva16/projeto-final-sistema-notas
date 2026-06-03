@@ -1,0 +1,11 @@
+Data do relatorio: Wed Jun 03 08:54:02 2026
+==================================================
+               RELATORIO DE NOTAS                 
+==================================================
+Aluno: Ana             | Media: 10.0 | Situacao: Aprovado
+--------------------------------------------------
+Resumo: 1 aprovados, 0 em recuperacao, 0 reprovados.
+Taxa de Aproveitamento: 100.0%
+Maior media: Ana (10.0)
+Menor media: Ana (10.0)
+==================================================
