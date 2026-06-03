@@ -9,3 +9,4 @@ Taxa de Aproveitamento: 100.0%
 Maior media: Ana (10.0)
 Menor media: Ana (10.0)
 ==================================================
+Aluno: Ana | Notas: [10.0, 2.0, 5.0, 8.0] | Média: 6.25 | Situação: Recuperação ⚠️

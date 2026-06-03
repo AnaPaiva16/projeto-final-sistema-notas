@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>✨ Sistema de Notas Deluxe v4.1 ✨</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #E6E6FA;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #FF69B4;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+            margin-bottom: 5px;
+        }
+
+        .container {
+            background-color: #161b22;
+            border: 2px solid #9370DB;
+            border-radius: 12px;
+            padding: 25px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 8px 24px rgba(147, 112, 219, 0.2);
+            margin-bottom: 25px;
+        }
+
+        /* Estilos do Formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .notas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        label {
+            color: #FF69B4;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            background-color: #0d1117;
+            border: 1px solid #9370DB;
+            border-radius: 6px;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #FF69B4;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+        }
+
+        button {
+            background-color: #9370DB;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #ff69b4;
+        }
+
+        /* Estilos da Lista de Histórico */
+        .historico-lista {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .historico-item {
+            background-color: #0d1117;
+            border-left: 4px solid #FF69B4;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 0 6px 6px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="Logo LunaCode">
+    <h1>✨ SISTEMA DE NOTAS v4.1 ✨</h1>
+    <p style="color: #9370DB; margin-bottom: 30px;">Paiva's Tech • Web Deluxe Edition</p>
+
+    <div class="container">
+        <h3 style="margin-top: 0; color: #FF69B4;">📝 Lançar Novas Notas</h3>
+        <form action="/salvar" method="POST">
+            <div class="campo">
+                <label for="nome">Nome Completo do Aluno:</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Ana Paiva" required>
+            </div>
+            
+            <label>Notas das Avaliações (0 a 10):</label>
+            <div class="notas-grid">
+                <div class="campo">
+                    <input type="number" name="nota1" min="0" max="10" step="0.1" placeholder="N1" required>
+                </div>
+                <div class="campo">
+                    <input type="number" name="nota2" min="0" max="10" step="0.1" placeholder="N2" required>
+                </div>
+                <div class="campo">
+                    <input type="number" name="nota3" min="0" max="10" step="0.1" placeholder="N3" required>
+                </div>
+                <div class="campo">
+                    <input type="number" name="nota4" min="0" max="10" step="0.1" placeholder="N4" required>
+                </div>
+            </div>
+            
+            <button type="submit">🔮 Calcular Média e Salvar Relatório</button>
+        </form>
+    </div>
+
+    <div class="container" style="max-width: 700px;">
+        <h3 style="margin-top: 0; color: #9370DB;">📂 Histórico do Arquivo (relatorio.txt)</h3>
+        
+        <ul class="historico-lista">
+            {% if alunos %}
+                {% for aluno in alunos %}
+                    <li class="historico-item">{{ aluno }}</li>
+                {% endfor %}
+            {% else %}
+                <p style="color: #888; font-style: italic;">Nenhum registro encontrado no arquivo ainda...</p>
+            {% endif %}
+        </ul>
+    </div>
+
+</body>
+</html>
